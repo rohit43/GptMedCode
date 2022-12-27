@@ -19,33 +19,33 @@ OPENAI_API_KEY="Your OpenAI API Key "
 ### All Set
 Now you are ready to rock and roll. Try the following script to get started. This will bring up a dialogue box. Enter the disease of your choice (Diabetes, a default option) and hit return. In few seconds, the mDat will be populated with ICD-10-CM codes for Diabetes. 
 ```{r}
-mDat <- GptMedCode::icd10Promt()
+mDat <- GptMedCode::icd10Prompt()
 head(mDat)
 ```
 #### Get ICD-9-CM Codes
 For diabetes (or the disease of your choice).
 ```{r}
-mDat <- GptMedCode::icd9Promt()
+mDat <- GptMedCode::icd9Prompt()
 head(mDat)
 ```
 #### Get SNOMED Codes
 For diabetes (or the disease of your choice).
 ```{r}
-mDat <- GptMedCode::snomedPromt()
+mDat <- GptMedCode::snomedPrompt()
 head(mDat)
 ```
 
 #### Get RxNorms Codes
 For Metformin (or the medication of your choice).
 ```{r}
-mDat <- GptMedCode::rxNormPromt()
+mDat <- GptMedCode::rxNormPrompt()
 head(mDat)
 ```
 
 #### Get LOINC Codes
 For Hemoglobin A1c (or the laboratory measurement of your choice).
 ```{r}
-mDat <- GptMedCode::loincPromt()
+mDat <- GptMedCode::loincPrompt()
 head(mDat)
 ```
 
