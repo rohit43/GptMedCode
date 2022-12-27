@@ -1,9 +1,9 @@
 Package: GptMedCode
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Get ICD9-CM; ICD-10CM, SNOMEDs, RXNorms, LOINC codes for given prompt
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Rohit Vashisht
+Maintainer: The package maintainer <rohit.vashisht@ucsf.edu>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
