@@ -28,10 +28,6 @@ icd10Prompt <- function(){
   }else{
     ss <- data.frame(ss[-x,])
   }
-  #colnames(ss) <- c("icd10Promt")
-  #ss$icd10Promt <- gsub('^[0-9].', '', ss$icd10Promt)
-  #ss$icd10Promt <- gsub('^.', '', ss$icd10Promt)
-  #ss$icd10Promt <- gsub('^ ', '', ss$icd10Promt)
   colnames(ss) <- c("ICD-10-CM Codes and Description")
   return(ss)
 }
