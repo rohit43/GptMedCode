@@ -1,15 +1,15 @@
-#' @title ICD-10-CM Promt
+#' @title ICD-10-CM Prompt
 #'
 #' @author Rohit Vashisht
 #'
 #' @description Use this function to get possible ICD10-CM codes for a given
-#' disease. Precise disease names will help GPT get better ICD-10-CM codes.
+#' disease. Precise disease names will help chatGPT get better ICD-10-CM codes.
 #'
 #' @return ss A data frame of ICD-10-CM Codes
 
-icd10Promt <- function(){
-  mt <- rstudioapi::showPrompt(title = "ICD9",
-                               message = "Enter medical term",
+icd10Prompt <- function(){
+  mt <- rstudioapi::showPrompt(title = "ICD10",
+                               message = "Enter a disease prompt",
                                default = "Diabetes")
   icdCode <- openai::create_completion(
     model = "text-davinci-003",
