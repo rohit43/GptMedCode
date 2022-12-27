@@ -1,15 +1,15 @@
-#' @title ICD-9-CM Promt
+#' @title ICD-9-CM Prompt
 #'
 #' @author Rohit Vashisht
 #'
 #' @description Use this function to get possible ICD-9-CM codes for a given
-#' disease. Precise disease names will help GPT get better ICD-9-CM codes.
+#' disease. Precise disease names will help chatGPT get better ICD-9-CM codes.
 #'
 #' @return ss A data frame of ICD-9-CM Codes
 
-icd9Promt <- function(){
+icd9Prompt <- function(){
   mt <- rstudioapi::showPrompt(title = "ICD9",
-                         message = "Enter medical term",
+                         message = "Enter a disease prompt",
                          default = "Diabetes")
   icdCode <- openai::create_completion(
     model = "text-davinci-003",
@@ -28,10 +28,6 @@ icd9Promt <- function(){
   }else{
     ss <- data.frame(ss[-x,])
   }
-  colnames(ss) <- c("icd9Promt")
-  ss$icd9Promt <- gsub('^[0-9].', '', ss$icd9Promt)
-  ss$icd9Promt <- gsub('^.', '', ss$icd9Promt)
-  ss$icd9Promt <- gsub('^ ', '', ss$icd9Promt)
   colnames(ss) <- c("ICD-9-CM Codes and Description")
   return(ss)
 }
