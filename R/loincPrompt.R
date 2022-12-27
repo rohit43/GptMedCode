@@ -1,16 +1,16 @@
-#' @title LOINC Promt
+#' @title LOINC Prompt
 #'
 #' @author Rohit Vashisht
 #'
 #' @description Use this function to get possible LOINC codes for a given
-#' laboratory measurement. Precise laboratory measurement names will help GPT
+#' laboratory measurement. Precise laboratory measurement names will help chatGPT
 #' get better LOINC codes.
 #'
 #' @return ss A data frame of LOINC Codes
 
-loincPromt <- function(){
+loincPrompt <- function(){
   mt <- rstudioapi::showPrompt(title = "LOINC",
-                               message = "Enter medical term",
+                               message = "Enter a laboratory measurement prompt",
                                default = "Hemoglobin A1c")
   loincCode <- openai::create_completion(
     model = "text-davinci-003",
@@ -29,10 +29,6 @@ loincPromt <- function(){
   }else{
     ss <- data.frame(ss[-x,])
   }
-  colnames(ss) <- c("loincPromt")
-  ss$loincPromt <- gsub('^[0-9].', '', ss$loincPromt)
-  ss$loincPromt <- gsub('^.', '', ss$loincPromt)
-  ss$loincPromt <- gsub('^ ', '', ss$loincPromt)
   colnames(ss) <- c("LOINC Codes and Description")
   return(ss)
 }
