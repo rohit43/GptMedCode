@@ -1,15 +1,15 @@
-#' @title SNOMED Promt
+#' @title SNOMED Prompt
 #'
 #' @author Rohit Vashisht
 #'
 #' @description Use this function to get possible SNOMED codes for a given
-#' disease. Precise disease names will help GPT get better SNOMED codes.
+#' disease. Precise disease names will help chatGPT get better SNOMED codes.
 #'
 #' @return ss A data frame of SNOMED Codes
 
-snomedPromt <- function(){
+snomedPrompt <- function(){
   mt <- rstudioapi::showPrompt(title = "SNOMED",
-                               message = "Enter medical term",
+                               message = "Enter disease prompt",
                                default = "Diabetes")
   snomedCode <- openai::create_completion(
     model = "text-davinci-003",
@@ -28,10 +28,6 @@ snomedPromt <- function(){
   }else{
     ss <- data.frame(ss[-x,])
   }
-  colnames(ss) <- c("snomedPromt")
-  ss$snomedPromt <- gsub('^[0-9].', '', ss$snomedPromt)
-  ss$snomedPromt <- gsub('^.', '', ss$snomedPromt)
-  ss$snomedPromt <- gsub('^ ', '', ss$snomedPromt)
   colnames(ss) <- c("SNOMED Codes and Description")
   return(ss)
 }
