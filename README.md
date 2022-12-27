@@ -13,7 +13,7 @@ devtools:: install_github("rohit43/GptMedCode")
 Set up your R environment with the OpenAI key as follows
 ```{r}
 usethis::edit_r_environ()
-# This will being open your .Renviron file. Add following in that file and save.
+# This will open your .Renviron file. Add following in that file and save.
 OPENAI_API_KEY="Your OpenAI API Key "
 ```
 ### All Set
