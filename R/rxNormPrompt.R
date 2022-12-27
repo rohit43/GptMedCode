@@ -1,15 +1,15 @@
-#' @title RxNorm Promt
+#' @title RxNorm Prompt
 #'
 #' @author Rohit Vashisht
 #'
 #' @description Use this function to get possible RxNorm codes for a given
-#' medication. Precise medication name will help GPT get better RxNorm codes.
+#' medication. Precise medication name will help chatGPT get better RxNorm codes.
 #'
 #' @return ss A data frame of RxNorm Codes
 
-rxNormPromt <- function(){
-  mt <- rstudioapi::showPrompt(title = "NDC",
-                               message = "Enter medical term",
+rxNormPrompt <- function(){
+  mt <- rstudioapi::showPrompt(title = "RxNorms",
+                               message = "Enter medication prompt",
                                default = "Metformin Hydrochloride tablet")
   rxnormCode <- openai::create_completion(
     model = "text-davinci-003",
@@ -28,10 +28,6 @@ rxNormPromt <- function(){
   }else{
     ss <- data.frame(ss[-x,])
   }
-  colnames(ss) <- c("rxNormPromt")
-  ss$rxNormPromt <- gsub('^[0-9].', '', ss$rxNormPromt)
-  ss$rxNormPromt <- gsub('^.', '', ss$rxNormPromt)
-  ss$rxNormPromt <- gsub('^ ', '', ss$rxNormPromt)
   colnames(ss) <- c("RxNorm Codes and Description")
   return(ss)
 }
