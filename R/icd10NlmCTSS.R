@@ -10,7 +10,7 @@
 #' of the codes returned by the ChatGPT. We thank NLM clinical table search
 #' service for their excellent work and providing the information.  
 #'
-#' @return ss A data frame of ICD-10-CM Codes
+#' @return icdCode A data frame of ICD-10-CM Codes
 
 icd10NlmCTSS <- function(){
   mt <- rstudioapi::showPrompt(title = "ICD10",
