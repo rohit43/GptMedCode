@@ -53,7 +53,7 @@ head(mDat)
 The code list returned by this package are from the pre-trained language model (ChatGPT). Please make sure to manually review the codes in case you want to utilize the codes further.
 
 ## New additions
-Thanks to Daniel Donoho, MD (Twitter @ddonoho) for suggesting to add codes from NLM CTSS (https://clinicaltables.nlm.nih.gov/). One can use the function ICD10NlmCTSS.R to obtain the ICD-10-CM codes for a given disease prompt (default Diabetes) from the NLM CTTS to help compare the codes returned by the ChatGPT prompt. 
+Thanks to Daniel Donoho, MD (Twitter @ddonoho) for suggesting (https://twitter.com/ddonoho/status/1607878698870382594?s=20&t=WVQFX1s6T-QUVH5-lUks6g) to add codes from NLM CTSS (https://clinicaltables.nlm.nih.gov/). One can use the function ICD10NlmCTSS.R to obtain the ICD-10-CM codes for a given disease prompt (default Diabetes) from the NLM CTTS to help compare the codes returned by the ChatGPT prompt. 
 
 ## Comments
 Please reach out for discussions, comments, and suggestions. Enjoy and be safe.
